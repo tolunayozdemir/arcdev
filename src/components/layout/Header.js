@@ -74,6 +74,9 @@ const useStyles = makeStyles(theme => ({
     marginLeft: 25,
     marginRight: 20,
     height: 45,
+    "&:hover": {
+      backgroundColor: theme.palette.secondary.light
+    }
   },
   menu: {
     backgroundColor: theme.palette.common.blue,
@@ -141,7 +144,7 @@ const Header = props => {
   const menuOptions = [
     { name: "Services", path: "/services", activeIndex: 1, selectedIndex: 0 },
     { name: "Custom Software Development", path: "/customsoftware", activeIndex: 1 },
-    { name: "Mobile App Development", path: "/mobileapps", activeIndex: 1, selectedIndex: 2 },
+    { name: "iOS/Android App Development", path: "/mobileapps", activeIndex: 1, selectedIndex: 2 },
     { name: "Website Development", path: "/webapps", activeIndex: 1, selectedIndex: 3 },
   ]
 
@@ -156,7 +159,11 @@ const Header = props => {
             }
           }
           break;
-        default: break;
+        case '/estimate':
+          props.setValue(5);
+          break;
+        default:
+          break;
       }
     })
   }, [value, menuOptions, selectedIndex, routes, props, setValue, setSelectedIndex])
@@ -188,7 +195,7 @@ const Header = props => {
           <Tab key={index} disableRipple className={classes.tab} component={Link} to={route.link} label={route.name} aria-owns={route.ariaOwns} aria-haspopup={route.ariaPopup} onMouseOver={route.mouseOver} />
         ))}
       </Tabs>
-      <Button variant="contained" color="secondary" className={classes.button}>
+      <Button onClick={() => props.setValue(5)} component={Link} to="/estimate" variant="contained" color="secondary" className={classes.button}>
         Free Estimate
       </Button>
       <Menu

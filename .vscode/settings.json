@@ -1,0 +1,7 @@
+{
+    "editor.suggest.showColors": false,
+    "workbench.preferredDarkColorTheme": "Visual Studio Light",
+    "workbench.preferredHighContrastColorTheme": "Red",
+    "workbench.preferredLightColorTheme": "Default Dark+",
+    "editor.tabSize": 2
+}

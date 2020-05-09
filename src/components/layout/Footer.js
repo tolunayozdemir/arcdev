@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     zIndex: 1302,
     position: "relative",
-    marginTop: 400
   },
   adornment: {
     width: "25rem",
@@ -42,7 +41,19 @@ const useStyles = makeStyles((theme) => ({
   },
   icon: {
     width: "4rem",
-    height: "4rem"
+    height: "4rem",
+    [theme.breakpoints.down("xs")]: {
+      height: "2.5rem",
+      width: "2.5rem"
+    }
+  },
+  socialContainer: {
+    position: "absolute",
+    marginTop: "-6rem",
+    right: "1.5rem",
+    [theme.breakpoints.down("xs")]: {
+      right: ".6rem"
+    }
   }
 }))
 
@@ -62,7 +73,7 @@ const Footer = ({ setValue, setSelectedIndex }) => {
             <Grid container spacing={2} direction="column">
               <Grid item component={Link} onClick={() => { setValue(1); setSelectedIndex(0) }} to="/services" className={classes.link}>Services</Grid>
               <Grid item component={Link} onClick={() => { setValue(1); setSelectedIndex(1) }} to="/customsoftware" className={classes.link}>Custom Software Development</Grid>
-              <Grid item component={Link} onClick={() => { setValue(1); setSelectedIndex(2) }} to="/mobileapps" className={classes.link}>Mobile App Development</Grid>
+              <Grid item component={Link} onClick={() => { setValue(1); setSelectedIndex(2) }} to="/mobileapps" className={classes.link}>iOS/Android App Development</Grid>
               <Grid item component={Link} onClick={() => { setValue(1); setSelectedIndex(3) }} to="/webapps" className={classes.link}>Website Development</Grid>
             </Grid>
           </Grid>
@@ -89,7 +100,7 @@ const Footer = ({ setValue, setSelectedIndex }) => {
         </Grid>
       </Hidden>
       <img src={footerAdornment} alt="Footer" className={classes.adornment} />
-      <Grid container>
+      <Grid container className={classes.socialContainer} justify="flex-end" spacing={2}>
         <Grid item component={"a"} href="https://www.tolunayozdemir.com" rel="noopener noreferrer" target="_blank">
           <img alt="facebook" src={facebook} className={classes.icon} />
         </Grid>
