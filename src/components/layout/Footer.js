@@ -63,7 +63,7 @@ const Footer = ({ setValue, setSelectedIndex }) => {
   return (
     <footer className={classes.footer}>
       <Hidden mdDown>
-        <Grid container spacing={2} justify="center" className={classes.mainContainer}>
+        <Grid container justify="center" className={classes.mainContainer}>
           <Grid item className={classes.gridItem}>
             <Grid container spacing={2} direction="column">
               <Grid item component={Link} onClick={() => setValue(0)} to="/" className={classes.link}>Home</Grid>

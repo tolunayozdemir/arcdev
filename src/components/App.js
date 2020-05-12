@@ -5,6 +5,7 @@ import theme from './ui/Theme';
 import Header from './layout/Header';
 import Footer from './layout/Footer';
 import LandingPage from './LandingPage';
+import Services from './Services';
 
 
 
@@ -17,8 +18,8 @@ function App() {
       <BrowserRouter>
         <Header value={value} selectedIndex={selectedIndex} setValue={setValue} setSelectedIndex={setSelectedIndex} />
         <Switch>
-          <Route exact path="/" render ={(props) => <LandingPage {...props} setValue={setValue} setSelectedIndex={setSelectedIndex} />} />
-          <Route exact path="/services" component={() => <div>Services</div>} />
+          <Route exact path="/" render={(props) => <LandingPage {...props} setValue={setValue} setSelectedIndex={setSelectedIndex} />} />
+          <Route exact path="/services" render={(props) => <Services {...props} setValue={setValue} setSelectedIndex={setSelectedIndex} />} />
           <Route exact path="/customsoftware" component={() => <div>Custom software</div>} />
           <Route exact path="/mobileapps" component={() => <div>mobile apps</div>} />
           <Route exact path="/webapps" component={() => <div>web sites</div>} />
